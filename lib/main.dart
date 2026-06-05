@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'theme/app_theme.dart';
 import 'screens/journal/journal_screen.dart';
+import 'services/journal_service.dart';
+import 'theme/app_theme.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  await JournalService.instance.initialize();
 
   runApp(
     const CiantisJournalsApp(),
